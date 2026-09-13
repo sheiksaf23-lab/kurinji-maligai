@@ -333,7 +333,7 @@ export default function App() {
           {/* Logo */}
           <button onClick={() => scrollTo("home")} className="flex items-center gap-3 group text-left focus:outline-none">
             <img
-              src="/logo.jpg"
+              src="/logo.png"
               alt="Kurinji Maligai Store Logo"
               className="w-11 h-11 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-emerald-400 shadow-md group-hover:scale-105 transition-transform"
             />
@@ -426,7 +426,7 @@ export default function App() {
           >
             <div className="flex items-center justify-between px-6 py-5 border-b border-emerald-800/50">
               <div className="flex items-center gap-3">
-                <img src="/logo.jpg" alt="Logo" className="w-10 h-10 rounded-full object-cover border border-emerald-300 shadow" />
+                <img src="/logo.png" alt="Logo" className="w-10 h-10 rounded-full object-cover border border-emerald-300 shadow" />
                 <span className="font-display font-bold text-lg">Kurinji Maligai</span>
               </div>
               <button
@@ -490,7 +490,7 @@ export default function App() {
             {/* Left Content Column */}
             <div className="relative z-10 text-center md:text-left">
               <div className="flex items-center justify-center md:justify-start gap-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full p-1.5 pr-5 mb-6 inline-flex shadow-lg">
-                <img src="/logo.jpg" alt="Kurinji Maligai Store Logo" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-emerald-300" />
+                <img src="/logo.png" alt="Kurinji Maligai Store Logo" className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-emerald-300" />
                 <span className="text-white text-xs sm:text-sm font-extrabold tracking-wide">Nature Blooms · Goodness Lives On</span>
               </div>
 
@@ -559,7 +559,7 @@ export default function App() {
               {/* Center Floating Emblem Logo */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 bg-white/95 backdrop-blur-md rounded-full shadow-2xl p-2.5 border-4 border-emerald-400 scale-110 flex items-center justify-center group hover:scale-110 transition-transform duration-300">
                 <img
-                  src="/logo.jpg"
+                  src="/logo.png"
                   alt="Kurinji Maligai Official Emblem"
                   className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover shadow-inner"
                 />
@@ -859,7 +859,7 @@ export default function App() {
               
               {/* Store Official Logo Emblem Card */}
               <div className="flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-4 sm:p-5 mb-6 shadow-xl">
-                <img src="/logo.jpg" alt="Kurinji Maligai Official Emblem" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-2 border-emerald-300 shadow-lg flex-shrink-0" />
+                <img src="/logo.png" alt="Kurinji Maligai Official Emblem" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border-2 border-emerald-300 shadow-lg flex-shrink-0" />
                 <div>
                   <p className="text-amber-300 font-extrabold text-xs sm:text-sm uppercase tracking-wider">Your Neighbourhood Store</p>
                   <p className="text-white font-extrabold text-base sm:text-xl">Essentials For A Better Tomorrow</p>
@@ -1036,7 +1036,7 @@ export default function App() {
             {/* Store Brand Info */}
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <img src="/logo.jpg" alt="Kurinji Maligai Logo" className="w-12 h-12 rounded-full object-cover border-2 border-emerald-400 shadow-md" />
+                <img src="/logo.png" alt="Kurinji Maligai Logo" className="w-12 h-12 rounded-full object-cover border-2 border-emerald-400 shadow-md" />
                 <div>
                   <p className="font-display font-bold text-lg">Kurinji Maligai</p>
                   <p className="text-emerald-400 text-xs">Department Store</p>
@@ -1112,7 +1112,7 @@ export default function App() {
             {/* Drawer Header */}
             <div className="bg-emerald-900 text-white p-5 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <img src="/logo.jpg" alt="Logo" className="w-10 h-10 rounded-full object-cover border border-emerald-300 shadow" />
+                <img src="/logo.png" alt="Logo" className="w-10 h-10 rounded-full object-cover border border-emerald-300 shadow" />
                 <div>
                   <h3 className="font-display font-bold text-lg">WhatsApp Order List</h3>
                   <p className="text-xs text-emerald-200">{totalCartCount} item(s) selected</p>
