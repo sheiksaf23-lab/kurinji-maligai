@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --color-forest: #064e3b;
+  --color-emerald-deep: #065f46;
+  --color-leaf: #059669;
+  --color-mint: #34d399;
+  --color-gold: #f59e0b;
+  --color-cream: #fefce8;
+}
+
+html, body, #root {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: #f0fdf4;
+  color: #0f2d1a;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Accessibility & Smart TV Focus Ring ── */
+:focus-visible {
+  outline: 3px solid #34d399 !important;
+  outline-offset: 3px !important;
+  border-radius: 8px;
+}
+
+.font-display { font-family: 'Playfair Display', serif; }
+
+/* Scrollbar */
+* { scrollbar-width: thin; scrollbar-color: #059669 transparent; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-thumb { background: #059669; border-radius: 10px; }
+
+/* ── Noise texture overlay ── */
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ── Hero gradient ── */
+.hero-gradient {
+  background: radial-gradient(ellipse at 20% 50%, #064e3b 0%, #065f46 35%, #047857 65%, #059669 100%);
+}
+
+/* ── Animated shimmer ── */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer-text {
+  background: linear-gradient(90deg, #6ee7b7, #ffffff, #6ee7b7, #fbbf24, #6ee7b7);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Float animation ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.float { animation: float 4s ease-in-out infinite; }
+
+/* ── Pulse ring ── */
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: #25d366;
+  animation: pulse-ring 1.8s ease-out infinite;
+}
+
+/* ── Category cards ── */
+.cat-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+}
+.cat-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 30px 60px rgba(6,78,59,0.2); }
+.cat-card .cat-shine {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.15) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+.cat-card:hover .cat-shine { transform: translateX(100%); }
+
+/* ── Product card ── */
+.product-card {
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
+}
+.product-card:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(6,78,59,0.15); }
+
+/* ── Marquee ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 20s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ── Counter animate ── */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.count-up { animation: countUp 0.6s ease forwards; }
+
+/* ── WhatsApp button ── */
+.wa-btn {
+  position: fixed;
+  bottom: calc(1.75rem + env(safe-area-inset-bottom, 0px));
+  right: calc(1.75rem + env(safe-area-inset-right, 0px));
+  z-index: 999;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37,211,102,0.55);
+  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease;
+}
+.wa-btn:hover { transform: scale(1.18); box-shadow: 0 12px 32px rgba(37,211,102,0.7); }
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+.slide-in-right { animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+/* ── Glassmorphism nav ── */
+.glass-nav {
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(6,78,59,0.08);
+}
+
+/* ── Section badge ── */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, #dcfce7, #d1fae5);
+  border: 1px solid #6ee7b7;
+  color: #065f46;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: 9999px;
+}
+
+/* ── Green gradient button ── */
+.btn-green {
+  background: linear-gradient(135deg, #059669, #065f46);
+  color: white;
+  font-weight: 700;
+  padding: 0.85rem 2.2rem;
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 20px rgba(5,150,105,0.4);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-green:hover {
+  background: linear-gradient(135deg, #047857, #064e3b);
+  box-shadow: 0 10px 28px rgba(5,150,105,0.55);
+  transform: translateY(-2px);
+}
+
+/* ── Gold outline button ── */
+.btn-outline-gold {
+  border: 2px solid rgba(255,255,255,0.35);
+  color: white;
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-outline-gold:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: #fbbf24;
+  color: #fbbf24;
+}
+
+/* ── Tab active ── */
+.tab-active {
+  background: linear-gradient(135deg, #059669, #065f46);
+  color: white;
+  box-shadow: 0 4px 14px rgba(5,150,105,0.35);
+}
+
+/* ── Diagonal strip ── */
+.diagonal-strip {
+  position: relative;
+}
+.diagonal-strip::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: inherit;
+  clip-path: polygon(0 60px, 100% 0, 100% 60px, 0 120px);
+  z-index: 0;
+}
+
+/* ── Star rating ── */
+.stars { color: #f59e0b; letter-spacing: 0.05em; }
+
+/* ── Offer tag ── */
+.offer-tag {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── Fade in animation (used by drawer overlay & mobile menu) ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.animate-fadeIn { animation: fadeIn 0.2s ease forwards; }
+
+/* ── Body scroll lock (applied when any modal / drawer is open) ── */
+.body-scroll-locked {
+  overflow: hidden !important;
+  /* preserve scroll-bar width so page doesn't jump on lock */
+  padding-right: var(--scrollbar-width, 0px);
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Kurinji Maligai",
+  "description": "Create an elegant, user-friendly website for Kurinji Maligai department store, featuring a green color scheme and easy contact options.",
+  "icons": {
+    "icon": "/logo.jpg"
+  },
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
